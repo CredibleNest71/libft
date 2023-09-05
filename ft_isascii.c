@@ -6,13 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:59:23 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/04 18:03:01 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/05 12:15:40 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c > 127)
-        return (0);
-    return (1);
+	if (c > 127)
+		return (0);
+	return (1);
 }

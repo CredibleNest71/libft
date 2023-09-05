@@ -6,13 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:59:15 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/04 17:51:46 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/05 12:16:17 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c <= '0' || c >= '9')
-        return (0);
-    return (1);
+	if (c <= '0' || c >= '9')
+		return (0);
+	return (1);
 }

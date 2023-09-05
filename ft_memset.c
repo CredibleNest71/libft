@@ -1,14 +1,26 @@
-void *ft_memset(void *s, int c, unsigned int n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 12:21:42 by mresch            #+#    #+#             */
+/*   Updated: 2023/09/05 12:23:58 by mresch           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-    unsigned int i;
-    i = 0;
+	unsigned int	i;
+	char			*p;
 
-    char *p = s;
-
-    while (i < n)
-    {
-        p[i] = c;
-        i++;
-    }
-    return (s);
+	p = s;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = c;
+		i++;
+	}
+	return (s);
 }
