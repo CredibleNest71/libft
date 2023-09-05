@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 12:21:42 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/05 16:25:24 by mresch           ###   ########.fr       */
+/*   Created: 2023/09/05 14:54:54 by mresch            #+#    #+#             */
+/*   Updated: 2023/09/05 16:24:24 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-void	*ft_memset(void *s, int c, unsigned int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
-	char			*p;
+	int				i;
+	unsigned char	*p;
+	unsigned char	search;
 
-	p = s;
 	i = 0;
-	while (i < n)
+	search = (unsigned char) c;
+	p = (unsigned char *) s;
+	while ( i < n)
 	{
-		p[i] = c;
+		if (p[i] == search)
+			return ((void *)&s[i]);
 		i++;
 	}
-	return (s);
+	return (0);
 }
+/*
+int main()
+{
+	char test[] = "5 Affen sind einer zu viel";
+	write(1,(char *) ft_memchr(test, 'e', 30),10 );
+	printf("%s", (char *) ft_memchr(test, 'e', 30));	
+	return 0;
+}
+*/

@@ -6,11 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:19:08 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/05 12:20:48 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/05 16:29:31 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include "libft.h" 
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	const char	*psrc;
 	char		*pdest;

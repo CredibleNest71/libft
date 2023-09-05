@@ -6,9 +6,11 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:52:52 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/05 13:01:47 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/05 16:25:42 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h" 
 
 char	*ft_strrchr(char *s, int c)
 {
