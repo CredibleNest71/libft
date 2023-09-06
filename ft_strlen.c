@@ -6,13 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:58:48 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/05 16:25:37 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/06 12:35:26 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	length;
 

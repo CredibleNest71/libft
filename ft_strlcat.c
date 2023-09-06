@@ -6,13 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:29:28 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/05 12:24:45 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/06 12:04:09 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -45,4 +45,5 @@ int main(){
 		write(1, &test[i++], 1);
 	}
 }
+
 */

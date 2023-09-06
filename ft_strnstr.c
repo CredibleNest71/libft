@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 14:54:54 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/06 14:05:04 by mresch           ###   ########.fr       */
+/*   Created: 2023/09/06 12:24:20 by mresch            #+#    #+#             */
+/*   Updated: 2023/09/06 12:57:00 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int				i;
-	unsigned char	*p;
-	unsigned char	search;
+	int		i;
+	int		j;
+	char	*found;
 
 	i = 0;
-	search = (unsigned char) c;
-	p = (unsigned char *) s;
-	while (i < n)
+	j = 0;
+	if (*little == 0)
+		return ((char *)big);
+	while (big[i] != 0 && len > 0 && little[j] != 0)
 	{
-		if (p[i] == search)
-			return ((void *)&s[i]);
+		if (big[i] != little[j])
+			j = 0;
+		if (big[i] == little[j])
+		{
+			if (j == 0)
+				found = (char *) &big[i];
+			j++;
+		}
 		i++;
+		len--;
 	}
+	if (little[j] == '\0')
+		return (found);
 	return (0);
 }
 /*
-int main()
-{
-	char test[] = "5 Affen sind einer zu viel";
-	write(1,(char *) ft_memchr(test, 'e', 30),10 );
-	printf("%s", (char *) ft_memchr(test, 'e', 30));	
+int main(){
+	printf("%s", ft_strnstr("Palmen sind keine Alpacas. Punkt.", "k", 100));
 	return 0;
 }
 */

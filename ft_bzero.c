@@ -6,13 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:34:21 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/05 16:25:11 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/06 12:01:48 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-void	ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
 	int		i;
 	char	*p;
