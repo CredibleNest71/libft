@@ -1,22 +1,34 @@
-#ifndef LIBFT_H
-#define LIBFT_H
-#include <stddef.h> 
-#include <unistd.h> 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/06 17:07:50 by mresch            #+#    #+#             */
+/*   Updated: 2023/09/06 17:07:52 by mresch           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    		ft_bzero(void *s, size_t n);
-int 			ft_isalpha(int c);
-int 			ft_isascii(int c);
-int 			ft_isdigit(int c);
-int 			ft_isalnum(int c);
-int 			ft_isprint(int c);
-void    		*ft_memcpy(void *dest, const void *src, size_t n);
-void 			*ft_memset(void *s, int c, size_t n);
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stddef.h> 
+# include <unistd.h> 
+# include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+void			ft_bzero(void *s, size_t n);
+int				ft_isalpha(int c);
+int				ft_isascii(int c);
+int				ft_isdigit(int c);
+int				ft_isalnum(int c);
+int				t_isprint(int c);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memset(void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
-size_t			ft_strlcpy(char *dest, const char *src, size_t size);
+size_t			t_strlcpy(char *dest, const char *src, size_t size);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_strlen(const char *str);
 int				ft_toupper(int c);
