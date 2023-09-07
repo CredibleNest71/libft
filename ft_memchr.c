@@ -6,7 +6,7 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:54:54 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/06 14:05:04 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/07 16:48:03 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t				i;
 	unsigned char	*p;
 	unsigned char	search;
 

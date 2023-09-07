@@ -6,7 +6,7 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:16:36 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/06 15:45:28 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/07 16:51:00 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*assign;
 	void	*ans;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (nmemb * size == 0)

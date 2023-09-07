@@ -6,7 +6,7 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:37:13 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/07 12:09:30 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/07 16:50:24 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ans;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

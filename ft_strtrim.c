@@ -6,7 +6,7 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 16:18:37 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/06 17:02:41 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/07 16:54:55 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	chc(char c, char const *set)
 	return (0);
 }
 
-int	get_len(char const *s1, char const *set)
+int	g_len(char const *s1, char const *set)
 {
 	int	i;
 	int	len;
@@ -51,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	j = 0;
 	i = 0;
-	len = get_len(s1, set);
+	len = g_len(s1, set);
 	ans = malloc(len + 1);
 	if (!ans)
 		return (0);

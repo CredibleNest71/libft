@@ -6,13 +6,13 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:54:08 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/06 17:03:29 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/07 16:54:13 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_len(const char *s1, const char *s2)
+int	gelen(const char *s1, const char *s2)
 {
 	int	i;
 	int	len;
@@ -38,7 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	j = 0;
 	i = -1;
-	len = get_len(s1, s2);
+	len = gelen(s1, s2);
 	ans = malloc(len + 1);
 	if (!ans)
 		return (0);
