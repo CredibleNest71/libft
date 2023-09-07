@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 15:37:13 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/07 12:09:30 by mresch           ###   ########.fr       */
+/*   Created: 2023/09/07 13:37:42 by mresch            #+#    #+#             */
+/*   Updated: 2023/09/07 13:41:27 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*ans;
-	int		i;
+/*Function name ft_putendl_fd
+Prototype void ft_putendl_fd(char *s, int fd);
+Turn in files -
+Parameters s: The string to output.
+fd: The file descriptor on which to write.
+Return value None
+External functs. write
+Description Outputs the string ’s’ to the given file descriptor
+followed by a newline.*/
 
-	i = 0;
-	while (s[i])
-		i++;
-	if (start > i || len == 0)
-		return (0);
-	if (i < len)
-		len = i;
-	ans = malloc(len + 1);
-	if (!ans)
-		return (0);
-	i = 0;
-	while (s[start] != 0 && len > 0)
-	{
-		ans[i] = s[start];
-		i++;
-		start++;
-		len--;
-	}
-	ans[i] = 0;
-	return (ans);
+void	ft_putendl_fd(char *s, int fd)
+{
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }

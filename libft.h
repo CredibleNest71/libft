@@ -6,7 +6,7 @@
 /*   By: mresch <mresch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:07:50 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/06 17:07:52 by mresch           ###   ########.fr       */
+/*   Updated: 2023/09/07 14:15:52 by mresch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_atoi(const char *nptr);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*strdup(const char *s);
+char			**ft_split(char const *s, char c);
+char			*ft_itoa(int n);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 #endif
