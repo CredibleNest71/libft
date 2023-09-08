@@ -15,16 +15,17 @@
 char	*ft_strrchr(char *s, int c)
 {
 	int		i;
+	char	search;
 
-	i = 0;
-	while (s[i] != 0)
-		i++;
-	while (s[i] != c && i >= 0)
+	search = (char) c;
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == search)
+			return (s + i);
 		i--;
-	if (i >= 0)
-		return (&s[i]);
-	else
-		return (0);
+	}
+	return (0);
 }
 /*
 #include <unistd.h>

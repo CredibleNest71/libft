@@ -15,15 +15,19 @@
 char	*ft_strchr(char *s, int c)
 {
 	int		i;
-	char	*p;
+	char	search;
 
-	while (c > 256)
-		c -= 256;
+	search = (char) c;
 	i = 0;
-	while ((s[i] != c) && s[i] != 0)
+	while (s[i])
+	{
+		if (s[i] == search)
+			return (s + i);
 		i++;
-	p = &s[i];
-	return (p);
+	}
+	if (s[i] == '\0' && c == '\0')
+		return (s + i);
+	return (0);
 }
 /*
 #include <unistd.h>
