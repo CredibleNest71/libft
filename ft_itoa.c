@@ -47,31 +47,38 @@ char	*ft_itoa(int n)
 	int		digits;
 	char	*ans;
 	int		i;
+	int		negative;
 
+	negative = 0;
 	i = 0;
 	digits = count_digits(n);
-	printf("digits = %d\n", digits);
 	ans = malloc(digits + 1);
 	if (!ans)
 		return (0);
 	ans[digits] = 0;
+	if (n == -2147483648)
+	{
+		ans = "-2147483648";
+		return (ans);
+	}
 	if (n < 0)
 	{
-		ans[i++] = '-';
+		negative = 1;
 		n *= -1;
 	}
 	while (digits - i >= 0)
 	{
-		printf("ans = %s\nn = %d\ndigits - i = %d\n\n", ans, n, digits - i);
-
-		ans[digits] = (n % 10) + '0';
+		ans[digits - 1] = (n % 10) + '0';
 		digits--;
 		n /= 10;
 	}
+	if (negative)
+		ans[0] = '-';
 	return (ans);
 }
-
+/*
 int main(int ac, char **av){
-	printf("%s", ft_itoa(atoi(av[1])));
+	printf("%s\n", ft_itoa(atoi(av[1])));
 	return 0; 
 }
+*/
