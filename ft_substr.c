@@ -25,11 +25,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!ans)
 		return (0);
 	j = 0;
-	while (s[start] != 0 && j < i)
+	while (s[start + j] != 0 && j < i)
 	{
-		ans[j] = s[start];
+		ans[j] = s[start + j];
 		j++;
-		start++;
 	}
 	ans[j] = 0;
 	return (ans);

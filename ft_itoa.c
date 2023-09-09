@@ -31,7 +31,7 @@ int	count_digits(int n)
 
 	digits = 0;
 	if (n == 0)
-		digits++;
+		return (1);
 	if (n < 0)
 		digits++;
 	while (n != 0)
@@ -44,30 +44,34 @@ int	count_digits(int n)
 
 char	*ft_itoa(int n)
 {
-	unsigned int		digits;
-	char				*ans;
-	int					i;
+	int		digits;
+	char	*ans;
+	int		i;
 
 	i = 0;
 	digits = count_digits(n);
+	printf("digits = %d\n", digits);
 	ans = malloc(digits + 1);
 	if (!ans)
 		return (0);
+	ans[digits] = 0;
 	if (n < 0)
 	{
 		ans[i++] = '-';
 		n *= -1;
 	}
-	while (digits - i)
+	while (digits - i >= 0)
 	{
-		ans[--digits] = (n % 10) + '0';
+		printf("ans = %s\nn = %d\ndigits - i = %d\n\n", ans, n, digits - i);
+
+		ans[digits] = (n % 10) + '0';
+		digits--;
 		n /= 10;
 	}
 	return (ans);
 }
-/*
-int main(){
-	printf("%s", ft_itoa(2383750));
+
+int main(int ac, char **av){
+	printf("%s", ft_itoa(atoi(av[1])));
 	return 0; 
 }
-*/
