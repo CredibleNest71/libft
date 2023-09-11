@@ -17,23 +17,21 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && i < n)
+	if (n == 0)
+		return (0);
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+		return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 		i++;
-	if (s1[i] > s2[i])
-		return (1);
-	if (s1[i] < s2[i])
-		return (-1);
+	}
 	return (0);
 }
 /*
 int main()
 {
-	if (strncmp("hey","hey",3) == ft_strncmp("hey","hey",3))
-		write(1, "erfolg", 10);
-	else
-		write(1, "nonono", 10);
-	printf("\nval of og = %d\n", strncmp("heyb", "heyz", 78));
-	printf("\nval of mine = %d\n", ft_strncmp("heyb", "heyz", 78));
+	printf("\nval of og = %d\n", strncmp("testa\300", "testaa\0", 6));
+	printf("\nval of mine = %d\n", ft_strncmp("testa\300", "testaa\0", 6));
 	return 0;
 }
 */

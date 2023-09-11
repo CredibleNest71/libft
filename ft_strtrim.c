@@ -17,7 +17,7 @@ int	chc(char c, char const *set)
 	int	i;
 
 	i = 0;
-	while (set[i] != 0)
+	while (set[i])
 	{
 		if (set[i] == c)
 			return (1);
@@ -33,11 +33,18 @@ int	g_len(char const *s1, char const *set)
 
 	i = 0;
 	len = 0;
+	while (chc(s1[i], set))
+		i++;
 	while (s1[i])
 	{
-		if (!(chc(s1[i], set)))
-			len++;
+		len++;
 		i++;
+	}
+	i--;
+	while (chc(s1[i], set))
+	{
+		i--;
+		len--;
 	}
 	return (len);
 }
@@ -55,11 +62,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ans = malloc(len + 1);
 	if (!ans)
 		return (0);
-	while (s1[i])
-	{
-		if (!(chc(s1[i], set)))
-			ans[j++] = s1[i];
+	while (chc(s1[i], set))
 		i++;
+	while (j < len)
+	{
+		ans[j] = s1[i];
+		i++;
+		j++;
 	}
 	ans[j] = 0;
 	return (ans);

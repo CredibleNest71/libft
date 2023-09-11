@@ -28,7 +28,7 @@ with a NULL pointer.
 
 int	get_len(char const *s)
 {
-	int	i; 
+	int	i;
 
 	i = 0;
 	while (s[i])

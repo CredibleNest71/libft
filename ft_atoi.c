@@ -18,7 +18,7 @@ int	space(char c)
 		return (1);
 	else if (c == 32)
 		return (1);
-	else 
+	else
 		return (0);
 }
 

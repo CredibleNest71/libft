@@ -24,11 +24,18 @@ descriptor.*/
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
+	char	str[12];
+	int		i;
 
+	i = 12;
 	if (!n)
 	{
 		write(fd, "0", 1);
+		return ;
+	}
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	if (n < 0)
@@ -36,14 +43,20 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		n *= -1;
 	}
-	if (n > 9)
+	str[i--] = 0;
+	while (n > 0)
 	{
-		ft_putnbr_fd(n / 10, 1);
-		ft_putnbr_fd(n % 10, 1);
+		str[i] = '0' + n % 10;
+		n /= 10;
+		i--;
 	}
-	if (n < 10)
-	{
-		c = n + '0';
-		write(fd, &c, 1);
-	}
+	while (str[++i])
+		write(fd, &str[i], 1);
 }
+/*
+int main ()
+{
+	ft_putnbr_fd(2147483647, 1);
+	return 0;
+}
+*/

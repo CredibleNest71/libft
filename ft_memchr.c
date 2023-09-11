@@ -15,8 +15,8 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;
-	unsigned char	*p;
-	unsigned char	search;
+	unsigned char		*p;
+	unsigned char		search;
 
 	i = 0;
 	search = (unsigned char) c;
