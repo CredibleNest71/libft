@@ -64,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	while (chc(s1[i], set))
 		i++;
-	while (j < len)
+	while (j < len && s1[i])
 	{
 		ans[j] = s1[i];
 		i++;

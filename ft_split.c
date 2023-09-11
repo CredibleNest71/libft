@@ -95,9 +95,10 @@ char	**ft_split(char const *s, char c)
 
 	start = 0;
 	i = 0;
-	ret = (char **) malloc(sizeof(char *) * count(s, c) + 1);
+	ret = (char **) malloc(sizeof(char *) * (count(s, c) + 1));
 	if (!ret)
 		return (0);
+	ret[count(s,c)] = 0;
 	while (i < count(s, c))
 	{
 		while (s[start] == c)
@@ -105,7 +106,6 @@ char	**ft_split(char const *s, char c)
 		end = search_next(s, start, c);
 		ret[i] = cut(s, start, end);
 		start = end;
-		printf("%s\n", ret[i]);
 		i++;
 	}
 	return (ret);

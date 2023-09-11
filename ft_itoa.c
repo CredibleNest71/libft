@@ -46,11 +46,9 @@ char	*ft_itoa(int n)
 {
 	int		digits;
 	char	*ans;
-	int		i;
 	int		negative;
 
 	negative = 0;
-	i = 0;
 	digits = count_digits(n);
 	ans = malloc(digits + 1);
 	if (!ans)
@@ -66,7 +64,7 @@ char	*ft_itoa(int n)
 		negative = 1;
 		n *= -1;
 	}
-	while (digits - i >= 0)
+	while (digits - negative >= 0)
 	{
 		ans[digits - 1] = (n % 10) + '0';
 		digits--;
@@ -78,7 +76,7 @@ char	*ft_itoa(int n)
 }
 /*
 int main(int ac, char **av){
-	printf("%s\n", ft_itoa(atoi(av[1])));
+	printf("%s\n", ft_itoa(-2147483647 -1));
 	return 0; 
 }
 */

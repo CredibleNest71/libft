@@ -25,7 +25,7 @@ char	*ft_strchr(char *s, int c)
 			return (s + i);
 		i++;
 	}
-	if (s[i] == '\0' && c == '\0')
+	if (s[i] == '\0' && search == '\0')
 		return (s + i);
 	return (0);
 }
