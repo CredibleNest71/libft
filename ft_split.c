@@ -26,16 +26,6 @@ character ’c’ as a delimiter. The array must end
 with a NULL pointer.
 */
 
-int	get_len(char const *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 int	count(char const *s, char c)
 {
 	int	i;
@@ -86,6 +76,20 @@ char	*cut(char const *s, int start, int end)
 	return (word);
 }
 
+char	**freedom(char **ret, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		free(ret[j]);
+		j++;
+	}
+	free(ret);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ret;
@@ -105,6 +109,8 @@ char	**ft_split(char const *s, char c)
 			start++;
 		end = search_next(s, start, c);
 		ret[i] = cut(s, start, end);
+		if (ret[i] == 0)
+			return (freedom(ret, i));
 		start = end;
 		i++;
 	}
