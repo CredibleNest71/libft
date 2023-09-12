@@ -20,7 +20,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	j = 0;
 	i = 0;
-	ans = malloc(1 + len);
+	if (start > (unsigned int) ft_strlen(s))
+		return (ft_strdup(""));
+	if ((size_t) ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	ans = malloc(len + 1);
 	if (!ans)
 		return (0);
 	while (s[i] && j < len)

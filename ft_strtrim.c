@@ -46,6 +46,8 @@ int	g_len(char const *s1, char const *set)
 		i--;
 		len--;
 	}
+	if (len < 0)
+		len = 0;
 	return (len);
 }
 
@@ -59,6 +61,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	i = 0;
 	len = g_len(s1, set);
+	if (!len)
+		return (ft_strdup(""));
 	ans = malloc(len + 1);
 	if (!ans)
 		return (0);

@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 
 void			ft_bzero(void *s, size_t n);
 int				ft_isalpha(int c);
