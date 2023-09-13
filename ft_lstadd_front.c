@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:30:19 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/13 10:38:44 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/13 11:39:46 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (new && lst)
-	{	
+	{
 		new->next = *lst;
 		lst = &new;
 	}

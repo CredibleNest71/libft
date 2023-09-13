@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:42:44 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/13 10:45:49 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/13 11:42:06 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while(lst->next)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }

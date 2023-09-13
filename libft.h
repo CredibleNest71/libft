@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:07:50 by mresch            #+#    #+#             */
-/*   Updated: 2023/09/13 11:26:53 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/13 11:47:28 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct  s_list
+typedef struct s_list
 {
-void            *content;
-struct s_list   *next;
-}   t_list;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 void			ft_bzero(void *s, size_t n);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
@@ -66,5 +66,6 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 #endif
