@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:10:27 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/13 11:44:28 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/13 12:38:39 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,19 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*ret;
 
-	ret = (t_list *) malloc(sizeof(t_list *));
+	ret = (t_list *) malloc(sizeof(t_list));
 	if (!ret)
-		return (NULL);
+		return (0);
 	ret->content = content;
-	ret->next = NULL;
+	ret->next = 0;
 	return (ret);
 }
+/*
+int main(){
+	char str[] = "test";
+	t_list *test;
+	test = ft_lstnew(str);
+	if (!(test->next))
+		printf("no next");
+}
+*/
