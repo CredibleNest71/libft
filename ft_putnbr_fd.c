@@ -39,31 +39,25 @@ int	check_outlier(int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	str[12];
-	int		i;
-
-	i = 12;
 	if (check_outlier(n, fd))
 		return ;
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	str[i--] = 0;
-	while (n > 0)
+	if (n >= 10)
 	{
-		str[i] = '0' + n % 10;
-		n /= 10;
-		i--;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	while (str[++i])
-		write(fd, &str[i], 1);
+	else
+		ft_putchar_fd(n + '0', fd);
 }
 /*
-int main ()
+int main (int ac, char **av)
 {
-	ft_putnbr_fd(2147483647, 1);
+	ft_putnbr_fd(atoi(av[1]), 1);
 	return 0;
 }
 */
